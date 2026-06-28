@@ -1,0 +1,101 @@
+/**
+ * layout.css — App shell, header, two-column grid, footnote.
+ */
+
+/* ── App shell ─────────────────────────────── */
+#app {
+  width: 100%;
+}
+
+.app-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+/* ── Header ────────────────────────────────── */
+header {
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 24px;
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.header-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.header-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Chips ─────────────────────────────────── */
+.chip {
+  font-size: 0.72rem;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  background: var(--surface);
+  white-space: nowrap;
+}
+
+/* ── Reset button ──────────────────────────── */
+.reset-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.reset-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.06);
+}
+
+/* ── Two-column grid ───────────────────────── */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 680px) {
+  .columns { grid-template-columns: 1fr; }
+}
+
+/* ── Footnote ──────────────────────────────── */
+.footnote {
+  margin-top: 28px;
+  padding: 14px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.footnote strong {
+  color: var(--text);
+}

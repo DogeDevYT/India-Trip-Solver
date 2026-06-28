@@ -1,0 +1,16 @@
+/**
+ * main.css — CSS entry point.
+ *
+ * Import order matters:
+ *   1. tokens   — custom properties must be declared before they're used
+ *   2. base     — reset + global element styles
+ *   3. layout   — app shell, grid, structural regions
+ *   4. components — all UI component styles
+ *
+ * Google Fonts are loaded in index.html so they're available globally.
+ */
+
+@import './tokens.css';
+@import './base.css';
+@import './layout.css';
+@import './components.css';

@@ -1,0 +1,43 @@
+/**
+ * tokens.css — Design system custom properties.
+ *
+ * All colours, spacing, radii, and shadows live here.
+ * Override these to retheme the entire dashboard.
+ */
+
+:root {
+  /* ── Background & surface ─────────────────────── */
+  --bg:          #0d1117;
+  --surface:     #161b22;
+  --surface-2:   #1f2937;
+  --border:      #30363d;
+  --border-soft: #21262d;
+
+  /* ── Go (green) ───────────────────────────────── */
+  --go:      #22c55e;
+  --go-dim:  #166534;
+  --go-glow: rgba(34, 197, 94, 0.15);
+
+  /* ── Stay (orange) ────────────────────────────── */
+  --stay:      #f97316;
+  --stay-dim:  #9a3412;
+  --stay-glow: rgba(249, 115, 22, 0.15);
+
+  /* ── Risk (red) ───────────────────────────────── */
+  --risk:      #ef4444;
+  --risk-glow: rgba(239, 68, 68, 0.2);
+
+  /* ── Text ─────────────────────────────────────── */
+  --text:       #e6edf3;
+  --text-muted: #8b949e;
+  --text-faint: #484f58;
+
+  /* ── Accent & verdict ─────────────────────────── */
+  --accent:       #58a6ff;
+  --verdict-tie:  #facc15;
+
+  /* ── Shape ────────────────────────────────────── */
+  --radius:    10px;
+  --radius-sm: 6px;
+  --shadow:    0 4px 24px rgba(0, 0, 0, 0.4);
+}

@@ -152,7 +152,14 @@ async function fetchSerpApiPrices(apiKey, departDoy, returnDoy, depAirport, arrA
   const returnDate   = doyToDateStr(returnDoy);
   const duration     = returnDoy - departDoy + 1;
 
-  const url = `/api/serpapi/search.json?engine=google_flights&departure_id=${depAirport}&arrival_id=${arrAirport}&outbound_date=${outboundDate}&return_date=${returnDate}&currency=USD&api_key=${apiKey.trim()}`;
+  let url = `/api/serpapi/search.json?engine=google_flights&departure_id=${depAirport}&arrival_id=${arrAirport}&outbound_date=${outboundDate}&return_date=${returnDate}&currency=USD&api_key=${apiKey.trim()}`;
+
+  // If in production (hosted on Cloudflare Pages), use a free CORS-bypassing proxy
+  // since standard browser requests to serpapi.com are blocked by CORS policies.
+  if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    const targetUrl = `https://serpapi.com/search.json?engine=google_flights&departure_id=${depAirport}&arrival_id=${arrAirport}&outbound_date=${outboundDate}&return_date=${returnDate}&currency=USD&api_key=${apiKey.trim()}`;
+    url = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
+  }
 
   const response = await fetch(url, {
     method: 'GET',
